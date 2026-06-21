@@ -45,6 +45,10 @@ async function enviarImagen(chatId) {
   });
 }
 
+app.get('/webhook', (req, res) => {
+    res.send('Telegram API');
+});
+
 /*
 Webhook de Telegram
 */
