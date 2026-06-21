@@ -46,11 +46,11 @@ Enviar imagen
 // }
 
 async function enviarImagen(chatId) {
-  // Generar número aleatorio entre 1 y 100
   const idImagen = Math.floor(Math.random() * 100) + 1;
+  const timestamp = Date.now();
 
   const urlImagen =
-    `https://picsum.photos/id/${idImagen}/800/500`;
+    `https://picsum.photos/id/${idImagen}/800/500?random=${timestamp}`;
 
   const urlTelegram =
     `https://api.telegram.org/bot${TOKEN}/sendPhoto`;
@@ -63,7 +63,7 @@ async function enviarImagen(chatId) {
     body: JSON.stringify({
       chat_id: chatId,
       photo: urlImagen,
-      caption: `Imagen aleatoria #${idImagen}`
+      caption: `Imagen #${idImagen}`
     })
   });
 }
