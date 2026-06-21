@@ -30,17 +30,40 @@ async function enviarMensaje(chatId, texto) {
 /*
 Enviar imagen
 */
-async function enviarImagen(chatId) {
-  const url = `https://api.telegram.org/bot${TOKEN}/sendPhoto`;
+// async function enviarImagen(chatId) {
+//   const url = `https://api.telegram.org/bot${TOKEN}/sendPhoto`;
 
-  await fetch(url, {
+//   await fetch(url, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify({
+//       chat_id: chatId,
+//       photo: "https://picsum.photos/800/500"
+//     })
+//   });
+// }
+
+async function enviarImagen(chatId) {
+  // Generar número aleatorio entre 1 y 100
+  const idImagen = Math.floor(Math.random() * 100) + 1;
+
+  const urlImagen =
+    `https://picsum.photos/id/${idImagen}/800/500`;
+
+  const urlTelegram =
+    `https://api.telegram.org/bot${TOKEN}/sendPhoto`;
+
+  await fetch(urlTelegram, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
       chat_id: chatId,
-      photo: "https://picsum.photos/800/500"
+      photo: urlImagen,
+      caption: `Imagen aleatoria #${idImagen}`
     })
   });
 }
