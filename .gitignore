@@ -1,0 +1,59 @@
+# Dependencias
+node_modules/
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Configuración del editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cobertura de pruebas
+coverage/
+
+# Archivos de compilación o distribución
+dist/
+build/
+
+# Caché
+.cache/
+.parcel-cache/
+
+# Archivos de bases de datos locales
+*.sqlite
+*.sqlite3
+*.db
+
+# Archivos comprimidos
+*.zip
+*.tar
+*.gz
+
+# Archivos de certificados y claves
+*.pem
+*.key
+*.crt
+
+# Dependencias de gestores de paquetes (opcional)
+.pnp.*
